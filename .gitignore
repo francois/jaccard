@@ -1,0 +1,25 @@
+## MAC OS
+.DS_Store
+
+## TEXTMATE
+*.tmproj
+tmtags
+
+## EMACS
+*~
+\#*
+.\#*
+
+## VIM
+*.swp
+
+## PROJECT::GENERAL
+coverage
+rdoc
+pkg
+.bundle
+doc
+
+## PROJECT::SPECIFIC
+# I ignore lock because I use Bundler only to setup a dev environment for Jaccard, not for production purposes
+Gemfile.lock
