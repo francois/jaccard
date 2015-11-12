@@ -8,6 +8,8 @@ Examples
 
 Calculate how similar two sets are:
 
+    require "jaccard"
+    
     a = ["likes:jeans", "likes:blue"]
     b = ["likes:jeans", "likes:women", "likes:red"]
     c = ["likes:women", "likes:red"]
