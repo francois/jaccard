@@ -8,6 +8,9 @@ Examples
 
 Calculate how similar two sets are:
 
+```ruby
+    require 'jaccard'
+    
     a = ["likes:jeans", "likes:blue"]
     b = ["likes:jeans", "likes:women", "likes:red"]
     c = ["likes:women", "likes:red"]
@@ -23,29 +26,36 @@ Calculate how similar two sets are:
     #=> 0.6666666666666666
 
     # According to the input data, b and c have the most similar likes.
+```
 
 We can also extract the distance quite easily:
 
+```ruby
     Jaccard.distance(a, b)
     #=> 0.75
+```
 
 The Jaccard distance is the inverse relation of the coefficient: `1 - coefficient`.
 
 Find out which set is closest to a given set of attributes (return a value where the distance is the minimum):
 
+```ruby
     Jaccard.closest_to(a, [b, c])
     #=> ["likes:jeans", "likes:women", "likes:red"]
 
     Jaccard.closest_to(b, [a, c])
     #=> ["likes:women", "likes:red"]
+```
 
 Finally, we can find the best pair in a set:
 
+```ruby
     require "pp"
     pp Jaccard.best_match([a, b, c])
     # [["likes:jeans", "likes:women", "likes:red"],
     #  ["likes:women", "likes:red"]]
     #=> nil
+```
 
 Notes on scalability
 ====================
