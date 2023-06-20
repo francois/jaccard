@@ -1,5 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
-require "set"
+require File.expand_path(File.dirname(__FILE__) + "/spec_helper")
 
 describe Jaccard do
   attr_reader :a, :b, :c
@@ -30,7 +29,9 @@ describe Jaccard do
 
     it do
       obj_without_union_method = Object.new
-      def obj_without_union_method.&(other); self; end
+      def obj_without_union_method.&(other)
+        self
+      end
 
       expect { Jaccard.coefficient(obj_without_union_method, []) }.to raise_error(ArgumentError)
     end
@@ -46,8 +47,8 @@ describe Jaccard do
 
   describe "#closest_to" do
     it "minimizes the distance" do
-      expect(Jaccard.closest_to(a, [b, c])).to be_equal( b)
-      expect(Jaccard.closest_to(b, [a, c])).to be_equal( c)
+      expect(Jaccard.closest_to(a, [b, c])).to be_equal(b)
+      expect(Jaccard.closest_to(b, [a, c])).to be_equal(c)
     end
   end
 

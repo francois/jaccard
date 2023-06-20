@@ -1,4 +1,7 @@
+# We must keep this due to Ruby 2.7 being supported
+# rubocop:disable Lint/RedundantRequireStatement
 require "set"
+# rubocop:enable Lint/RedundantRequireStatement
 
 # Helpers to calculate the Jaccard Coefficient Index and related metrics easily.
 #
@@ -36,7 +39,7 @@ module Jaccard
     raise ArgumentError, "#{a.inspect} does not implement #+" unless a.respond_to?(:+)
 
     intersection = a & b
-    union        = a + b
+    union = a + b
 
     # Set does not implement #uniq or #uniq! since elements are
     # always guaranteed to be present only once. That's the only
@@ -109,6 +112,6 @@ module Jaccard
       end
     end
 
-    matches.sort.first.last
+    matches.min.last
   end
 end
