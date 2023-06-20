@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email = "francois@teksol.info"
   gem.homepage = "http://github.com/francois/jaccard"
   gem.authors = ["François Beausoleil"]
-  gem.files = Dir["bin/*"] + Dir["lib/**/*.rb"] << "README.md" << "LICENSE" << "Gemfile"
+  gem.files = Dir["bin/*"] + Dir["lib/**/*.rb"] << "README.md" << "LICENSE" << "Gemfile" << "Gemfile.lock"
 
   gem.add_development_dependency "rake", ">= 0"
   gem.add_development_dependency "rspec", ">= 1.2.9"

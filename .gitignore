@@ -21,6 +21,4 @@ pkg
 doc
 
 ## PROJECT::SPECIFIC
-# I ignore lock because I use Bundler only to setup a dev environment for Jaccard, not for production purposes
-Gemfile.lock
 *.gem
