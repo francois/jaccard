@@ -1,4 +1,3 @@
-# coding: utf-8
 require "rubygems"
 require "rake"
 
@@ -7,10 +6,10 @@ task :spec do
   sh "rspec --color -I lib #{specs.join(" ")}"
 end
 
-task :default => :spec
+task default: :spec
 
 begin
-  require 'yard'
+  require "yard"
   YARD::Rake::YardocTask.new
 rescue LoadError
   task :yardoc do
